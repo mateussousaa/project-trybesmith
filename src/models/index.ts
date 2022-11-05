@@ -1,5 +1,4 @@
 import * as productModel from './product.model';
-
-const userModel = () => {};
+import * as userModel from './user.model';
 
 export { productModel, userModel };

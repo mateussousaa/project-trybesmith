@@ -1,5 +1,4 @@
 import * as productController from './product.controller';
-
-const userController = () => {};
+import * as userController from './user.controller';
 
 export { productController, userController };
