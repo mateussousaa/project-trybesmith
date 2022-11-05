@@ -18,6 +18,11 @@ const insertProduct = async (product: Product): Promise<Product> => {
   return { id: insertId, ...product };
 };
 
-const getProducts = () => {};
+const getProducts = async (): Promise<Product[]> => {
+  const [rows] = await connection.execute(
+    'SELECT * FROM Trybesmith.Products',
+  );
+  return rows as Product[];
+};
 
 export { insertProduct, getProducts };

@@ -6,6 +6,6 @@ const insertProduct = async (product: Product): Promise<Product> => {
   return insertedProduct;
 };
 
-const getProducts = () => {};
+const getProducts = async (): Promise<Product[]> => productModel.getProducts();
 
 export { insertProduct, getProducts };

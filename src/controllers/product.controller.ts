@@ -8,6 +8,9 @@ const insertProduct = async (req: Request, res: Response) => {
   res.status(statusCodes.CREATED).json(insertedProduct);
 };
 
-const getProducts = () => {};
+const getProducts = async (req: Request, res: Response) => {
+  const products = await productService.getProducts();
+  res.status(statusCodes.OK).json(products);
+};
 
 export { insertProduct, getProducts };
