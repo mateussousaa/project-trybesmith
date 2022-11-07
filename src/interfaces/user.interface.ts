@@ -12,3 +12,8 @@ export interface UserWithoutPassword {
   classe: string,
   level: number,
 }
+
+export interface UserLogin {
+  username: string,
+  password: string,
+}

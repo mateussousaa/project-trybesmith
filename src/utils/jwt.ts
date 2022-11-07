@@ -1,10 +1,10 @@
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
-import { UserWithoutPassword } from '../interfaces/user.interface';
+import { UserLogin, UserWithoutPassword } from '../interfaces/user.interface';
 
 dotenv.config();
 
-const createToken = (data: UserWithoutPassword) => {
+const createToken = (data: (UserWithoutPassword | UserLogin)) => {
   const token = jwt.sign(data, process.env.JWT_SECRET as string, {
     expiresIn: '2d',
   });
