@@ -15,7 +15,7 @@ const insertUser = async (user: User): Promise<User> => {
     `INSERT INTO Trybesmith.Users (${columns}) values (${placeholders})`,
     [...Object.values(user)],
   );
-  return { insertId, ...user } as User;
+  return { id: insertId, ...user } as User;
 };
 
 const getUsers = () => {};

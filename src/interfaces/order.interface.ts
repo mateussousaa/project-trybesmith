@@ -1,5 +1,5 @@
 export default interface Order {
-  id: number,
+  id?: number,
   userId: number,
-  productsIds?: number[]
+  productsIds: number[]
 }

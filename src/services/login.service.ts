@@ -8,7 +8,8 @@ const login = async (user: UserLogin): Promise<string> => {
   if (!findedUser || findedUser.password !== user.password) {
     throw new HttpException(401, 'Username or password invalid');
   }
-  const token = createToken(user);
+  const { password, ...userWithoutPassword } = findedUser;
+  const token = createToken(userWithoutPassword);
   return token;
 };
 
