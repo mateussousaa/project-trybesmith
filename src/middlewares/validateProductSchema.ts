@@ -14,9 +14,11 @@ const validateSchema = (product: Product) => {
 const validateProductSchema = (req: Request, res: Response, next: NextFunction) => {
   const { name, amount } = req.body;
   
-  if (!name) throw new HttpException(400, '"name" is required');
-  if (!amount) throw new HttpException(400, '"amount" is required');
   const { error } = validateSchema({ name, amount });
+
+  if (error && error.details[0].type === 'any.required') {
+    throw new HttpException(400, error.details[0].message);
+  }
   if (error) throw new HttpException(422, error.details[0].message);
   next();
 };
