@@ -4,8 +4,8 @@
 
 ## Habilidades
 
-- Programar em linguagem TypeScript;
-- Desenvolver uma API de um CRUD (Create, Read, Update e Delete);
+- Programar em linguagem TypeScript.
+- Desenvolver uma API de um CRUD (Create, Read, Update e Delete).
 - Desenvolver endpoints para ler e escrever em um banco de dados MySQL.
 
 ---
